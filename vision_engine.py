@@ -51,3 +51,11 @@ class VisionEngine:
         except Exception as e:
             print(f"Error processing image with YOLOE-26: {e}")
             return False
+
+if __name__ == "__main__":
+    engine = VisionEngine()
+    # Assuming you drop a 'test.jpg' in the root directory
+    if os.path.exists("jpeg.jpg"):
+        engine.process_image("jpeg.jpg", "laptop, coffee cup, person", "processed_test.jpg")
+    else:
+        print("Engine initialized successfully. Drop a 'test.jpg' in the directory to test inference.")
